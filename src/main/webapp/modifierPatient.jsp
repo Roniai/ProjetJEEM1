@@ -12,13 +12,13 @@
 <div class="container" style="width:500px">
 	<div class="card">
 		<div class="card-header">
-		Modification du médecin
+		Modification du patient
 		</div>
 		<div class="card-body">
-			<form action="updateMedecin.do" method="post">
+			<form action="updatePatient.do" method="post">
 			<div class="form-group">
 				<label class="control-label">Code : </label>
-				<input type="text" name="codemed" class="form-control" autocomplete="off"/>
+				<input type="text" name="codepat" class="form-control" autocomplete="off"/>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Nom : </label>
@@ -29,14 +29,16 @@
 				<input type="text" name="prenom" class="form-control" autocomplete="off"/>
 			</div>	
 			<div class="form-group">
-				<label class="control-label">Grade : </label>
-                <select  name="grade" class="form-control" style="height: 40px;">
-	                <option value="Professeur">Professeur</option>
-	                <option value="Docteur">Docteur</option>
-	                <option value="Médecin Interne">Médecin Interne</option>
-	                <option value="Etudiant">Etudiant</option>
+				<label class="control-label">Sexe : </label>
+                <select  name="sexe" class="form-control" style="height: 40px;">
+	                <option value="M">Masculin</option>
+	                <option value="F">Féminin</option>
                 </select>
 			</div>
+			<div class="form-group">
+				<label class="control-label">Adresse : </label>
+				<input type="text" name="sexe" class="form-control" autocomplete="off"/>
+			</div>	
 			<div>
 				<button type="submit" class="btn btn-primary" style="background: rgb(0,139,139)">Modifier</button>
 			</div>			

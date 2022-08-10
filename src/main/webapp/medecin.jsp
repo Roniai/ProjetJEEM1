@@ -30,7 +30,7 @@
 				</tr>
 				<c:forEach items="${model.medecins}" var="m">
 				<p>Un message</p>
-				<%-- <tr>	
+				<tr>	
 					<td>${m.codemed}</td>
 					<td>${m.nom}</td>
 					<td>${m.prenom}</td>
@@ -38,7 +38,7 @@
 					<td><a href="modifierMedecin.do?id=${m.id}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
 					<td><a onclick="return confirm('Etes-vous sûr de supprimer ce medecin?')" href="supprimerMedecin.do?id=${m.id}">
 					<img src="images/delete.png" width="50" style="margin:-10px 0px"></a></td>
-				</tr> --%>
+				</tr>
 				</c:forEach>
 			</table>
 		</div>

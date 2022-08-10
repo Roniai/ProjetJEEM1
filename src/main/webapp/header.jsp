@@ -8,7 +8,7 @@
 				<a class="nav-link" href="medecin.do"  style="color:white">Médecin</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="patient.do"  style="color:white">Patient</a>
+				<a class="nav-link" href="patient.do?motCle="  style="color:white">Patient</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="visiter.do"  style="color:white">Visiter</a>

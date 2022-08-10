@@ -1,21 +1,34 @@
 package test;
 
-import manager.MedecinManager;
+//import manager.MedecinManager;
+import manager.PatientManager;
 import util.HibernateUtil;
 
 public class Test_Main {
 
 	public static void main(String[] args) {
-		MedecinManager m = new MedecinManager();
+		PatientManager p = new PatientManager();
 		
+//		p.ajouterPatient("P401", "MARO", "Manana", "M", "Ampandrana");
+//		p.ajouterPatient("P201", "RAKOTO", "Manandray", "M", "Masoalahy");
+//		p.ajouterPatient("P351", "RASOA", "Marie", "F", "Mananara");
+//		p.ajouterPatient("P601", "RABE", "Tolotra", "M", "Ampahibe");
+//		p.ajouterPatient("P708", "BARY", "Mahefa", "M", "Itondra");
+//		p.ajouterPatient("P970", "RINDRA", "Marinà", "F", "Mahalena");
+		
+//		p.modifierPatient(1, "P402", "MARO", "Manana", "M", "Ampandrana");
+
+//		System.out.println(p.recherchePatient("1"));
+		
+//		MedecinManager m = new MedecinManager();
 //		m.supprimerMedecin(6);
 		
 //		m.modifierMedecin(1, "P502", "MAHOLY", "Jeanne", "Professeur");
-//		m.modifierMedecin(2, "M012", "MAHERY", "Sarobidy", "Professeur");
-//		m.modifierMedecin(3, "M124", "TAHIRY", "Marie Claire", "Docteur");
-//		m.modifierMedecin(4, "I117", "LALAINA", "Lovatiana", "Docteur");
-//		m.modifierMedecin(5, "I004", "ANDRY", "Nomenjanahary", "Docteur");
-//		m.modifierMedecin(6, "SG315", "TANTELY", "Mirantsoa", "Docteur");
+//		m.modifierMedecin(2, "P012", "MAHERY", "Sarobidy", "Professeur");
+//		m.modifierMedecin(3, "D124", "TAHIRY", "Marie Claire", "Docteur");
+//		m.modifierMedecin(4, "D117", "LALAINA", "Lovatiana", "Docteur");
+//		m.modifierMedecin(5, "D004", "ANDRY", "Nomenjanahary", "Docteur");
+//		m.modifierMedecin(6, "D315", "TANTELY", "Mirantsoa", "Docteur");
 		
 //		m.ajouterMedecin("P502", "MAHOLY", "Jeanne", "Pharmacienne");
 //		m.ajouterMedecin("M012", "TAHIRY", "Marie Claire", "Médecin");
