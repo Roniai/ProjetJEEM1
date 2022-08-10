@@ -1,6 +1,7 @@
 package bean;
 
 public class Medecin {
+	private int id;
 	private String codemed;
 	private String nom;
 	private String prenom;
@@ -14,6 +15,15 @@ public class Medecin {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.grade = grade;
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getCodemed() {

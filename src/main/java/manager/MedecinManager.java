@@ -1,5 +1,7 @@
 package manager;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -12,14 +14,22 @@ public class MedecinManager {
 	public List<Medecin> afficherTousLesMedecins() {
 		Session session = (Session) HibernateUtil.getSessionFactory().openSession();
 		Query q = session.createQuery("from Medecin m");
-		List<Medecin> m = q.list();
-		return m;
+//		List<Medecin> m = q.list();
+		List<Medecin> medecin = new ArrayList<Medecin>();
+		List l = q.list();
+		Iterator i = l.iterator();
+		while(i.hasNext()) {
+			Object o = (Object)i.next();
+			Medecin m = (Medecin)o;
+			medecin.add(m);
+		}
+		return medecin;
 	}
 	
-	public Medecin getMedecin(String codemed) {
+	public Medecin getMedecin(int id) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Medecin m = (Medecin)session.load(Medecin.class, codemed);
+		Medecin m = (Medecin)session.load(Medecin.class, id);
 		return m;
 	}
 	
@@ -35,24 +45,22 @@ public class MedecinManager {
 		session.getTransaction().commit();
 	}
 	
-	public void modifierMedecin(String codemed,String codemed_new, String nom, String prenom, String grade) {
+	public void modifierMedecin(int id, String codemed, String nom, String prenom, String grade) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Medecin m = (Medecin)session.load(Medecin.class, codemed);
-		Medecin med_new = new Medecin(); 
-		med_new.setCodemed(codemed_new);
-		med_new.setNom(nom);
-		med_new.setPrenom(prenom);
-		med_new.setGrade(grade);
-		session.save(med_new);
-		session.delete(m);
+		Medecin m = (Medecin)session.load(Medecin.class, id);
+		m.setCodemed(codemed);
+		m.setNom(nom);
+		m.setPrenom(prenom);
+		m.setGrade(grade);
+		session.update(m);
 		session.getTransaction().commit();
 	}
 	
-	public void supprimerMedecin(String codemed) {
+	public void supprimerMedecin(int id) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Medecin m = (Medecin)session.load(Medecin.class, codemed);
+		Medecin m = (Medecin)session.load(Medecin.class, id);
 		session.delete(m);
 		session.getTransaction().commit();
 	}

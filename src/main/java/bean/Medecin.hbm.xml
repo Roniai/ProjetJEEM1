@@ -5,8 +5,11 @@
 
 <hibernate-mapping>
 <class name="bean.Medecin" table="medecin">
-	<id name="codemed" column="code_med"></id>
+	<id name="id" column="id_med">
+	<generator class="increment"></generator>
+	</id>
 	
+	<property name="codemed" column="code_med"></property>
 	<property name="nom" column="nom_med"></property>
 	<property name="prenom" column="prenom_med"></property>
 	<property name="grade" column="grade_med"></property>

@@ -12,7 +12,7 @@
 <div class="container" style="width:500px;">
 	<div class="card">
 		<div class="card-header">
-		Ajout d'une site touristique
+		Ajout d'un nouveau médecin
 		</div>
 		<div class="card-body">
 			<form action="saveSite.do" method="post">

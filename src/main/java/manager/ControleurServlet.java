@@ -35,16 +35,16 @@ public class ControleurServlet extends HttpServlet{
 		
 		String path=request.getServletPath();
 
-//		if(path.equals("/")){
-//			request.getRequestDispatcher("index.jsp").forward(request, response);
-//		}
-		
 		if(path.equals("/")){
-			MedecinModele modelM = new MedecinModele();
-			List<Medecin> medecin = medecinManager.afficherTousLesMedecins();
-			modelM.setMedecins(medecin);
-			request.setAttribute("model", modelM);
-			request.getRequestDispatcher("index.jsp").forward(request, response); 
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		
+		else if(path.equals("/medecin.do")){
+		  MedecinModele model = new MedecinModele(); List<Medecin> medecin =
+		  medecinManager.afficherTousLesMedecins(); model.setMedecins(medecin);
+		  request.setAttribute("model", model);
+			 
+			request.getRequestDispatcher("medecin.jsp").forward(request, response); 
 		}
 		else if(path.equals("/ajouterMedecin.do")){
 			request.getRequestDispatcher("ajouterMedecin.jsp").forward(request, response); 
@@ -57,31 +57,31 @@ public class ControleurServlet extends HttpServlet{
 			Medecin m = new Medecin(codemed, nom, prenom, grade);
 			medecinManager.ajouterMedecin(codemed, nom, prenom, grade);
 			request.setAttribute("medecin", m);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("medecin.jsp").forward(request, response);
 		}
 		else if(path.equals("/supprimerMedecin.do")){
-			String codemed = request.getParameter("codemed");
-			medecinManager.supprimerMedecin(codemed);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			int id = Integer.parseInt(request.getParameter("id"));
+			medecinManager.supprimerMedecin(id);
+			request.getRequestDispatcher("medecin.jsp").forward(request, response);
 		}
 		else if(path.equals("/modifierMedecin.do"))
 		{
-			String codemed = request.getParameter("codemed");
-			Medecin m = medecinManager.getMedecin(codemed);
+			int id = Integer.parseInt(request.getParameter("id"));
+			Medecin m = medecinManager.getMedecin(id);
 			request.setAttribute("medecin", m);
 			request.getRequestDispatcher("modifierMedecin.jsp").forward(request, response); 
 		}
 		else if(path.equals("/updateMedecin.do"))
 		{
+			int id = Integer.parseInt(request.getParameter("id"));
 			String codemed = request.getParameter("codemed");
-			String codemed_hidden = request.getParameter("codemed_hidden");
 			String nom = request.getParameter("nom");
 			String prenom = request.getParameter("prenoms");
 			String grade = request.getParameter("grade");
 			Medecin m = new Medecin(codemed, nom, prenom, grade);
-			medecinManager.modifierMedecin(codemed_hidden,codemed, nom, prenom, grade);
+			medecinManager.modifierMedecin(id ,codemed, nom, prenom, grade);
 			request.setAttribute("medecin", m);
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("medecin.jsp").forward(request, response);
 		}
 //		
 //	//###########################  SITE  ###########################
