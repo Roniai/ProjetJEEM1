@@ -1,16 +1,26 @@
 package test;
 
+//import manager.VisiterManager;
 //import manager.MedecinManager;
-import manager.PatientManager;
+//import manager.PatientManager;
 import util.HibernateUtil;
 
 public class Test_Main {
 
 	public static void main(String[] args) {
-		PatientManager p = new PatientManager();
+		
+//		VisiterManager v = new VisiterManager();
+		
+//		v.modifierVisiter(1, "P315", "P401", "20/08/22");
+		
+//		v.ajouterVisiter("P502", "P502", "20/08/22");
+//		v.ajouterVisiter("P012", "P601", "12/08/22");
+//		v.ajouterVisiter("D117", "P970", "12/08/22");
+		
+//		PatientManager p = new PatientManager();
 		
 //		p.ajouterPatient("P401", "MARO", "Manana", "M", "Ampandrana");
-//		p.ajouterPatient("P201", "RAKOTO", "Manandray", "M", "Masoalahy");
+//		p.ajouterPatient("P502", "RAKOTO", "Manandray", "M", "Masoalahy");
 //		p.ajouterPatient("P351", "RASOA", "Marie", "F", "Mananara");
 //		p.ajouterPatient("P601", "RABE", "Tolotra", "M", "Ampahibe");
 //		p.ajouterPatient("P708", "BARY", "Mahefa", "M", "Itondra");

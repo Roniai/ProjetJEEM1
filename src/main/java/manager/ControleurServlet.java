@@ -13,8 +13,10 @@ import org.apache.catalina.connector.Response;
 
 import bean.Medecin;
 import bean.Patient;
+import bean.Visiter;
 import web.MedecinModele;
 import web.PatientModele;
+import web.VisiterModele;
 
 @WebServlet (urlPatterns = {"/patient","*.do"})
 
@@ -24,6 +26,7 @@ public class ControleurServlet extends HttpServlet{
 
 		MedecinManager medecinManager;
 		PatientManager patientManager;
+		VisiterManager visiterManager;
 
 	@Override
 	public void init() throws ServletException{
@@ -65,7 +68,7 @@ public class ControleurServlet extends HttpServlet{
 			Medecin m = new Medecin(codemed, nom, prenom, grade);
 			medecinManager.ajouterMedecin(codemed, nom, prenom, grade);
 			request.setAttribute("medecin", m);
-			response.sendRedirect("medecin.do.");
+			response.sendRedirect("medecin.do");
 		}
 		else if(path.equals("/modifierMedecin.do"))
 		{
@@ -84,12 +87,12 @@ public class ControleurServlet extends HttpServlet{
 			Medecin m = new Medecin(codemed, nom, prenom, grade);
 			medecinManager.modifierMedecin(id ,codemed, nom, prenom, grade);
 			request.setAttribute("medecin", m);
-			response.sendRedirect("medecin.do.");
+			response.sendRedirect("medecin.do");
 		}
 		else if(path.equals("/supprimerMedecin.do")){
 			int id = Integer.parseInt(request.getParameter("id"));
 			medecinManager.supprimerMedecin(id);
-			response.sendRedirect("medecin.do.");
+			response.sendRedirect("medecin.do");
 		}
 		
 		//###########################  PATIENT  ###########################
@@ -143,11 +146,55 @@ public class ControleurServlet extends HttpServlet{
 			response.sendRedirect("patient.do?motCle=");
 		}
 		
+		//###########################  VISITER  ###########################
+		
+		else if(path.equals("/visiter.do")){
+		  VisiterModele model = new VisiterModele(); 
+		  List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
+		  model.setVisiters(visiter);
+		  request.setAttribute("model", model);
+		  request.getRequestDispatcher("visiter.jsp").forward(request, response); 
+		}
+		else if(path.equals("/ajouterVisiter.do")){
+			request.getRequestDispatcher("ajouterVisiter.jsp").forward(request, response); 
+		}
+		else if(path.equals("/saveVisiter.do") && request.getMethod().equals("POST")){
+			String codemed = request.getParameter("codemed");
+			String codepat = request.getParameter("codepat");
+			String date = request.getParameter("date");
+			Visiter v = new Visiter(codemed, codepat, date);
+			visiterManager.ajouterVisiter(codemed, codepat, date);
+			request.setAttribute("visiter", v);
+			response.sendRedirect("visiter.do");
+		}
+		else if(path.equals("/modifierVisiter.do"))
+		{
+			int id = Integer.parseInt(request.getParameter("id"));
+			Visiter v = visiterManager.getVisiter(id);
+			request.setAttribute("visiter", v);
+			request.getRequestDispatcher("modifierVisiter.jsp").forward(request, response); 
+		}
+		else if(path.equals("/updateVisiter.do"))
+		{
+			int id = Integer.parseInt(request.getParameter("id"));
+			String codemed = request.getParameter("codemed");
+			String codepat = request.getParameter("codepat");
+			String date = request.getParameter("date");
+			Visiter v = new Visiter(codemed, codepat, date);
+			visiterManager.modifierVisiter(id ,codemed, codepat, date);
+			request.setAttribute("visiter", v);
+			response.sendRedirect("visiter.do");
+		}
+		else if(path.equals("/supprimerVisiter.do")){
+			int id = Integer.parseInt(request.getParameter("id"));
+			visiterManager.supprimerVisiter(id);
+			response.sendRedirect("visiter.do");
+		}
+		
 		else 
 		{
 			response.sendError(Response.SC_NOT_FOUND);
 		}
-		
 		
 	}
 
