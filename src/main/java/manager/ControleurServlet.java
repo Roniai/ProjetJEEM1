@@ -20,7 +20,6 @@ import web.VisiterModele;
 
 @WebServlet (urlPatterns = {"/patient","*.do"})
 
-
 public class ControleurServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
@@ -32,6 +31,7 @@ public class ControleurServlet extends HttpServlet{
 	public void init() throws ServletException{
 		medecinManager = new MedecinManager();
 		patientManager = new PatientManager();
+		visiterManager = new VisiterManager();
 	}
 	
 	
@@ -147,13 +147,13 @@ public class ControleurServlet extends HttpServlet{
 		}
 		
 		//###########################  VISITER  ###########################
-		
+
 		else if(path.equals("/visiter.do")){
 		  VisiterModele model = new VisiterModele(); 
 		  List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
 		  model.setVisiters(visiter);
 		  request.setAttribute("model", model);
-		  request.getRequestDispatcher("visiter.jsp").forward(request, response); 
+		  request.getRequestDispatcher("visiter.jsp").forward(request, response);
 		}
 		else if(path.equals("/ajouterVisiter.do")){
 			request.getRequestDispatcher("ajouterVisiter.jsp").forward(request, response); 

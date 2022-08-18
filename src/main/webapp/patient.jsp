@@ -32,9 +32,8 @@
 					<th>Suppression</th>
 				</tr>
 				<c:forEach items="${model.patients}" var="p">
-				<p>Un message</p>
 				<tr>	
-					<td>${p.codemed}</td>
+					<td>${p.codepat}</td>
 					<td>${p.nom}</td>
 					<td>${p.prenom}</td>
 					<td>${p.sexe}</td>

@@ -7,7 +7,7 @@ import bean.Visiter;
 
 public class VisiterModele {
 	List<Visiter> visiters = new ArrayList<>();
-
+	
 	public List<Visiter> getVisiters() {
 		return visiters;
 	}

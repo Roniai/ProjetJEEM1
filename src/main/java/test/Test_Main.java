@@ -1,13 +1,24 @@
 package test;
 
-//import manager.VisiterManager;
+import java.util.List;
+
+import bean.Visiter;
+import manager.VisiterManager;
 //import manager.MedecinManager;
 //import manager.PatientManager;
 import util.HibernateUtil;
+import web.VisiterModele;
 
 public class Test_Main {
 
 	public static void main(String[] args) {
+		VisiterManager visiterManager = new VisiterManager();;
+		VisiterModele model = new VisiterModele();
+		List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
+		  model.setVisiters(visiter);
+		  for(Visiter v : model.getVisiters()) {
+			  System.out.println(v.getId());
+		  }
 		
 //		VisiterManager v = new VisiterManager();
 		

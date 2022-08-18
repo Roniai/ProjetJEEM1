@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="bean.Patient" table="patient">
+	<id name="id" column="id_pat">
+	<generator class="increment"></generator>
+	</id>
+	
+	<property name="codepat" column="code_pat"></property>
+	<property name="nom" column="nom_pat"></property>
+	<property name="prenom" column="prenom_pat"></property>
+	<property name="sexe" column="sexe_pat"></property>
+	<property name="adresse" column="adresse_pat"></property>
+	
+</class>
+</hibernate-mapping>
