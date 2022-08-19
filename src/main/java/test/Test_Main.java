@@ -2,23 +2,29 @@ package test;
 
 import java.util.List;
 
+import bean.Medecin;
 import bean.Visiter;
+import manager.MedecinManager;
 import manager.VisiterManager;
-//import manager.MedecinManager;
-//import manager.PatientManager;
 import util.HibernateUtil;
 import web.VisiterModele;
 
 public class Test_Main {
 
 	public static void main(String[] args) {
-		VisiterManager visiterManager = new VisiterManager();;
-		VisiterModele model = new VisiterModele();
-		List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
-		  model.setVisiters(visiter);
-		  for(Visiter v : model.getVisiters()) {
-			  System.out.println(v.getId());
-		  }
+//		VisiterManager visiterManager = new VisiterManager();;
+//		VisiterModele model = new VisiterModele();
+//		List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
+//		  model.setVisiters(visiter);
+		  
+//		  for(Visiter v : model.getVisiters()) {
+//			  System.out.println(v.getCodemed());
+//		  }
+		  
+//		  MedecinManager m = new MedecinManager();
+//		  System.out.println(m.getMedecinCode("D315"));
+		  
+		 
 		
 //		VisiterManager v = new VisiterManager();
 		

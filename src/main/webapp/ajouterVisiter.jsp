@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Formulaire d'ajout</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -15,7 +16,7 @@
 		Ajout d'une nouvelle visite
 		</div>
 		<div class="card-body">
-			<form action="saveMedecin.do" method="post">
+			<form action="saveVisiter.do" method="post">
 			<div class="form-group">
 				<label class="control-label">Code du Médecin : </label>
 				<input type="text" name="codemed" class="form-control" autocomplete="off"/>
@@ -28,8 +29,9 @@
 				<label class="control-label">Date : </label>
 				<input type="text" name="date" class="form-control" autocomplete="off"/>
 			</div>
-			<div>
-				<button type="submit" class="btn btn-primary" style="background: rgb(0,139,139)">Ajouter</button>
+			<div style="margin-top:20px">
+				<button type="submit" class="btn btn-primary">Ajouter</button>
+				<a href="visiter.do" class="btn btn-primary">Annuler</a>
 			</div>		
 			</form>
 		</div>

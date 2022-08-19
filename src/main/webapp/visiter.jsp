@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Visiter</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -16,8 +17,8 @@
 		</div>
 		<div class="card-body">
 			<form>
-				<button class="btn btn-primary" style="float:right;background: rgb(0,139,139)">
-				<a href="ajouterVisiter.do" style="color:white;text-decoration:none">+ Ajouter</a></button>
+				<a href="ajouterVisiter.do" class="btn btn-primary" style="float:right;margin-bottom:15px">
+				+ Ajouter</a>
 			</form>
 			<table class="table table-striped">
 				<tr>

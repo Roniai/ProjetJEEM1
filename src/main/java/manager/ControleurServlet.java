@@ -48,6 +48,8 @@ public class ControleurServlet extends HttpServlet{
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
+		//Save et Update : button côté formulaire
+		
 		//###########################  MEDECIN  ###########################
 		
 		else if(path.equals("/medecin.do")){
@@ -58,16 +60,14 @@ public class ControleurServlet extends HttpServlet{
 		  request.getRequestDispatcher("medecin.jsp").forward(request, response); 
 		}
 		else if(path.equals("/ajouterMedecin.do")){
-			request.getRequestDispatcher("ajouterMedecin.jsp").forward(request, response); 
+			request.getRequestDispatcher("ajouterMedecin.jsp").forward(request, response);
 		}
 		else if(path.equals("/saveMedecin.do") && request.getMethod().equals("POST")){
 			String codemed = request.getParameter("codemed");
 			String nom = request.getParameter("nom");
 			String prenom = request.getParameter("prenom");
 			String grade = request.getParameter("grade");
-			Medecin m = new Medecin(codemed, nom, prenom, grade);
 			medecinManager.ajouterMedecin(codemed, nom, prenom, grade);
-			request.setAttribute("medecin", m);
 			response.sendRedirect("medecin.do");
 		}
 		else if(path.equals("/modifierMedecin.do"))
@@ -82,11 +82,9 @@ public class ControleurServlet extends HttpServlet{
 			int id = Integer.parseInt(request.getParameter("id"));
 			String codemed = request.getParameter("codemed");
 			String nom = request.getParameter("nom");
-			String prenom = request.getParameter("prenoms");
+			String prenom = request.getParameter("prenom");
 			String grade = request.getParameter("grade");
-			Medecin m = new Medecin(codemed, nom, prenom, grade);
 			medecinManager.modifierMedecin(id ,codemed, nom, prenom, grade);
-			request.setAttribute("medecin", m);
 			response.sendRedirect("medecin.do");
 		}
 		else if(path.equals("/supprimerMedecin.do")){
@@ -115,9 +113,7 @@ public class ControleurServlet extends HttpServlet{
 			String prenom = request.getParameter("prenom");
 			String sexe = request.getParameter("sexe");
 			String adresse = request.getParameter("adresse");
-			Patient p = new Patient(codepat, nom, prenom, sexe, adresse);
 			patientManager.ajouterPatient(codepat, nom, prenom, sexe, adresse);
-			request.setAttribute("patient", p);
 			response.sendRedirect("patient.do?motCle=");
 		}
 		else if(path.equals("/modifierPatient.do"))
@@ -132,12 +128,10 @@ public class ControleurServlet extends HttpServlet{
 			int id = Integer.parseInt(request.getParameter("id"));
 			String codepat = request.getParameter("codepat");
 			String nom = request.getParameter("nom");
-			String prenom = request.getParameter("prenoms");
+			String prenom = request.getParameter("prenom");
 			String sexe = request.getParameter("sexe");
 			String adresse = request.getParameter("adresse");
-			Patient p = new Patient(codepat, nom, prenom, sexe, adresse);
 			patientManager.modifierPatient(id ,codepat, nom, prenom, sexe, adresse);
-			request.setAttribute("patient", p);
 			response.sendRedirect("patient.do?motCle=");
 		}
 		else if(path.equals("/supprimerPatient.do")){
@@ -149,8 +143,8 @@ public class ControleurServlet extends HttpServlet{
 		//###########################  VISITER  ###########################
 
 		else if(path.equals("/visiter.do")){
-		  VisiterModele model = new VisiterModele(); 
-		  List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
+		  VisiterModele model = new VisiterModele();
+		  List<Visiter> visiter = visiterManager.afficherTousLesVisiters();
 		  model.setVisiters(visiter);
 		  request.setAttribute("model", model);
 		  request.getRequestDispatcher("visiter.jsp").forward(request, response);
@@ -162,9 +156,7 @@ public class ControleurServlet extends HttpServlet{
 			String codemed = request.getParameter("codemed");
 			String codepat = request.getParameter("codepat");
 			String date = request.getParameter("date");
-			Visiter v = new Visiter(codemed, codepat, date);
 			visiterManager.ajouterVisiter(codemed, codepat, date);
-			request.setAttribute("visiter", v);
 			response.sendRedirect("visiter.do");
 		}
 		else if(path.equals("/modifierVisiter.do"))
@@ -180,9 +172,7 @@ public class ControleurServlet extends HttpServlet{
 			String codemed = request.getParameter("codemed");
 			String codepat = request.getParameter("codepat");
 			String date = request.getParameter("date");
-			Visiter v = new Visiter(codemed, codepat, date);
 			visiterManager.modifierVisiter(id ,codemed, codepat, date);
-			request.setAttribute("visiter", v);
 			response.sendRedirect("visiter.do");
 		}
 		else if(path.equals("/supprimerVisiter.do")){

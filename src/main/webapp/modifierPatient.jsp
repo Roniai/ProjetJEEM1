@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Formulaire de modification</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -16,32 +17,34 @@
 		</div>
 		<div class="card-body">
 			<form action="updatePatient.do" method="post">
+			<input type="hidden" name="id" value="${patient.id}"/>
 			<div class="form-group">
 				<label class="control-label">Code : </label>
-				<input type="text" name="codepat" class="form-control" autocomplete="off"/>
+				<input type="text" name="codepat" class="form-control" value="${patient.codepat}" autocomplete="off"/>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Nom : </label>
-				<input type="text" name="nom" class="form-control" autocomplete="off"/>
+				<input type="text" name="nom" class="form-control" value="${patient.nom}" autocomplete="off"/>
 			</div>	
 			<div class="form-group">
 				<label class="control-label">Prenoms : </label>
-				<input type="text" name="prenom" class="form-control" autocomplete="off"/>
+				<input type="text" name="prenom" class="form-control" value="${patient.prenom}" autocomplete="off"/>
 			</div>	
 			<div class="form-group">
 				<label class="control-label">Sexe : </label>
                 <select  name="sexe" class="form-control" style="height: 40px;">
-	                <option value="M">Masculin</option>
-	                <option value="F">Féminin</option>
+	                <option value="M" <c:if test="${patient.sexe=='M'}">selected</c:if> >Masculin</option>
+	                <option value="F" <c:if test="${patient.sexe=='F'}">selected</c:if> >Féminin</option>
                 </select>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Adresse : </label>
-				<input type="text" name="sexe" class="form-control" autocomplete="off"/>
+				<input type="text" name="adresse" class="form-control" value="${patient.adresse}" autocomplete="off"/>
 			</div>	
-			<div>
-				<button type="submit" class="btn btn-primary" style="background: rgb(0,139,139)">Modifier</button>
-			</div>			
+			<div style="margin-top:20px">
+				<button type="submit" class="btn btn-primary">Modifier</button>
+				<a href="patient.do?motCle=" class="btn btn-primary">Annuler</a>
+			</div>
 			</form>
 		</div>
 	

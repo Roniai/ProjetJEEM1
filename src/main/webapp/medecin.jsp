@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Médecin</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -16,8 +17,8 @@
 		</div>
 		<div class="card-body">
 			<form>
-				<button class="btn btn-primary" style="float:right;background: rgb(0,139,139)">
-				<a href="ajouterMedecin.do" style="color:white;text-decoration:none">+ Ajouter</a></button>
+				<a href="ajouterMedecin.do" class="btn btn-primary" style="float:right;margin-bottom:15px">
+				+ Ajouter</a>
 			</form>
 			<table class="table table-striped">
 				<tr>
@@ -33,7 +34,12 @@
 					<td>${m.codemed}</td>
 					<td>${m.nom}</td>
 					<td>${m.prenom}</td>
-					<td>${m.grade}</td>
+					<td>
+						<c:if test="${m.grade=='P'}"><c:out value="Professeur"></c:out></c:if>
+						<c:if test="${m.grade=='D'}"><c:out value="Docteur"></c:out></c:if>
+						<c:if test="${m.grade=='MI'}"><c:out value="Médecin Interne"></c:out></c:if>
+						<c:if test="${m.grade=='E'}"><c:out value="Etudiant"></c:out></c:if>
+					</td>
 					<td><a href="modifierMedecin.do?id=${m.id}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
 					<td><a onclick="return confirm('Etes-vous sûr de supprimer ce medecin?')" href="supprimerMedecin.do?id=${m.id}">
 					<img src="images/delete.png" width="50" style="margin:-10px 0px"></a></td>

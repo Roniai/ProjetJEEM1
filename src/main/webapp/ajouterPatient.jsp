@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Formulaire d'ajout</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -37,11 +38,12 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label">Adresse : </label>
-				<input type="text" name="sexe" class="form-control" autocomplete="off"/>
+				<input type="text" name="adresse" class="form-control" autocomplete="off"/>
 			</div>	
-			<div>
-				<button type="submit" class="btn btn-primary" style="background: rgb(0,139,139)">Ajouter</button>
-			</div>		
+			<div style="margin-top:20px">
+				<button type="submit" class="btn btn-primary">Ajouter</button>
+				<a href="patient.do?motCle=" class="btn btn-primary">Annuler</a>
+			</div>
 			</form>
 		</div>
 	

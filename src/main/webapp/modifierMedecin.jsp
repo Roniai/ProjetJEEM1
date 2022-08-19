@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Formulaire de modification</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -16,30 +17,32 @@
 		</div>
 		<div class="card-body">
 			<form action="updateMedecin.do" method="post">
+			<input type="hidden" name="id" value="${medecin.id}"/>
 			<div class="form-group">
 				<label class="control-label">Code : </label>
-				<input type="text" name="codemed" class="form-control" autocomplete="off"/>
+				<input type="text" name="codemed" class="form-control" value="${medecin.codemed}" autocomplete="off"/>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Nom : </label>
-				<input type="text" name="nom" class="form-control" autocomplete="off"/>
+				<input type="text" name="nom" class="form-control" value="${medecin.nom}" autocomplete="off"/>
 			</div>	
 			<div class="form-group">
 				<label class="control-label">Prenoms : </label>
-				<input type="text" name="prenom" class="form-control" autocomplete="off"/>
+				<input type="text" name="prenom" class="form-control" value="${medecin.prenom}" autocomplete="off"/>
 			</div>	
 			<div class="form-group">
 				<label class="control-label">Grade : </label>
-                <select  name="grade" class="form-control" style="height: 40px;">
-	                <option value="Professeur">Professeur</option>
-	                <option value="Docteur">Docteur</option>
-	                <option value="Médecin Interne">Médecin Interne</option>
-	                <option value="Etudiant">Etudiant</option>
+                <select name="grade" class="form-control" style="height: 40px;">
+	                <option value="P" <c:if test="${medecin.grade=='P'}">selected</c:if> >Professeur</option>
+	                <option value="D" <c:if test="${medecin.grade=='D'}">selected</c:if> >Docteur</option>
+	                <option value="MI" <c:if test="${medecin.grade=='MI'}">selected</c:if> >Médecin Interne</option>
+	                <option value="E" <c:if test="${medecin.grade=='E'}">selected</c:if> >Etudiant</option>
                 </select>
 			</div>
-			<div>
-				<button type="submit" class="btn btn-primary" style="background: rgb(0,139,139)">Modifier</button>
-			</div>			
+			<div style="margin-top:20px">
+				<button type="submit" class="btn btn-primary">Modifier</button>
+				<a href="medecin.do" class="btn btn-primary">Annuler</a>
+			</div>
 			</form>
 		</div>
 	

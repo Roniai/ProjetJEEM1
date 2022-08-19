@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Formulaire d'ajout</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/monstyle.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%@include file="header.jsp" %>
@@ -31,14 +32,15 @@
 			<div class="form-group">
 				<label class="control-label">Grade : </label>
                 <select  name="grade" class="form-control" style="height: 40px;">
-	                <option value="Professeur">Professeur</option>
-	                <option value="Docteur">Docteur</option>
-	                <option value="Médecin Interne">Médecin Interne</option>
-	                <option value="Etudiant">Etudiant</option>
+	                <option value="P">Professeur</option>
+	                <option value="D">Docteur</option>
+	                <option value="MI">Médecin Interne</option>
+	                <option value="E">Etudiant</option>
                 </select>
 			</div>
-			<div>
-				<button type="submit" class="btn btn-primary" style="background: rgb(0,139,139)">Ajouter</button>
+			<div style="margin-top:20px">
+				<button type="submit" class="btn btn-primary">Ajouter</button>
+				<a href="medecin.do" class="btn btn-primary">Annuler</a>
 			</div>		
 			</form>
 		</div>
