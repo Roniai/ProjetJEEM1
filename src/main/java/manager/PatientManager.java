@@ -14,7 +14,6 @@ public class PatientManager {
 	public List<Patient> afficherTousLesPatients() {
 		Session session = (Session) HibernateUtil.getSessionFactory().openSession();
 		Query q = session.createQuery("FROM Patient p ORDER BY p.codepat ASC");
-//		List<Patient> p = q.list();
 		List<Patient> patient = new ArrayList<Patient>();
 		List l = q.list();
 		Iterator i = l.iterator();

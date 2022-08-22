@@ -28,7 +28,7 @@
 			</div>
 			<div class="form-group">
 				<label class="control-label">Date : </label>
-				<input type="text" name="date" class="form-control" value="${visiter.date}" autocomplete="off"/>
+				<input type="date" name="date" class="form-control" value="${visiter.date}" autocomplete="off"/>
 			</div>
 			<div style="margin-top:20px">
 				<button type="submit" class="btn btn-primary">Modifier</button>

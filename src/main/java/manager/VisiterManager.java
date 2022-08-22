@@ -1,6 +1,7 @@
 package manager;
 
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,7 +15,6 @@ public class VisiterManager {
 	public List<Visiter> afficherTousLesVisiters() {
 		Session session = (Session) HibernateUtil.getSessionFactory().openSession();
 		Query q = session.createQuery("FROM Visiter v ORDER BY v.codemed ASC");
-//		List<Visiter> v = q.list();
 		List<Visiter> visiter = new ArrayList<Visiter>();
 		List l = q.list();
 		Iterator i = l.iterator();
@@ -33,7 +33,7 @@ public class VisiterManager {
 		return v;
 	}
 	
-	public void ajouterVisiter(String codemed, String codepat, String date) {
+	public void ajouterVisiter(String codemed, String codepat, Date date) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Visiter v = new Visiter();
@@ -44,7 +44,7 @@ public class VisiterManager {
 		session.getTransaction().commit();
 	}
 	
-	public void modifierVisiter(int id, String codemed, String codepat, String date) {
+	public void modifierVisiter(int id, String codemed, String codepat, Date date) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Visiter v = (Visiter)session.load(Visiter.class, id);

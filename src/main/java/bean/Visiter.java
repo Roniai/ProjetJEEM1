@@ -1,14 +1,17 @@
 package bean;
 
+//Indique la date au format SQL que le JDBC peut comprendre
+import java.sql.Date;
+
 public class Visiter {
 	private int id;
 	private String codemed;
 	private String codepat;
-	private String date;
+	private Date date;
 	
 	public Visiter() {}
 
-	public Visiter(String codemed, String codepat, String date) {
+	public Visiter(String codemed, String codepat, Date date) {
 		super();
 		this.codemed = codemed;
 		this.codepat = codepat;
@@ -39,11 +42,11 @@ public class Visiter {
 		this.codepat = codepat;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

@@ -1,6 +1,8 @@
 package manager;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -53,11 +55,11 @@ public class ControleurServlet extends HttpServlet{
 		//###########################  MEDECIN  ###########################
 		
 		else if(path.equals("/medecin.do")){
-		  MedecinModele model = new MedecinModele(); 
-		  List<Medecin> medecin = medecinManager.afficherTousLesMedecins(); 
-		  model.setMedecins(medecin);
-		  request.setAttribute("model", model);
-		  request.getRequestDispatcher("medecin.jsp").forward(request, response); 
+		    MedecinModele model = new MedecinModele(); 
+		    List<Medecin> medecin = medecinManager.afficherTousLesMedecins(); 
+		    model.setMedecins(medecin);
+		    request.setAttribute("model", model);
+		    request.getRequestDispatcher("medecin.jsp").forward(request, response); 
 		}
 		else if(path.equals("/ajouterMedecin.do")){
 			request.getRequestDispatcher("ajouterMedecin.jsp").forward(request, response);
@@ -143,11 +145,14 @@ public class ControleurServlet extends HttpServlet{
 		//###########################  VISITER  ###########################
 
 		else if(path.equals("/visiter.do")){
-		  VisiterModele model = new VisiterModele();
-		  List<Visiter> visiter = visiterManager.afficherTousLesVisiters();
-		  model.setVisiters(visiter);
-		  request.setAttribute("model", model);
-		  request.getRequestDispatcher("visiter.jsp").forward(request, response);
+		    VisiterModele model = new VisiterModele();
+		    List<Visiter> visiter = visiterManager.afficherTousLesVisiters();
+		    model.setVisiters(visiter);
+		    request.setAttribute("model", model);
+		    //Convert java.sql.Date to String format(day-month-year)
+		    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		    request.setAttribute("sdf", sdf);
+		    request.getRequestDispatcher("visiter.jsp").forward(request, response);
 		}
 		else if(path.equals("/ajouterVisiter.do")){
 			request.getRequestDispatcher("ajouterVisiter.jsp").forward(request, response); 
@@ -156,7 +161,8 @@ public class ControleurServlet extends HttpServlet{
 			String codemed = request.getParameter("codemed");
 			String codepat = request.getParameter("codepat");
 			String date = request.getParameter("date");
-			visiterManager.ajouterVisiter(codemed, codepat, date);
+			//Convert String to java.sql.Date
+			visiterManager.ajouterVisiter(codemed, codepat, Date.valueOf(date));
 			response.sendRedirect("visiter.do");
 		}
 		else if(path.equals("/modifierVisiter.do"))
@@ -172,7 +178,7 @@ public class ControleurServlet extends HttpServlet{
 			String codemed = request.getParameter("codemed");
 			String codepat = request.getParameter("codepat");
 			String date = request.getParameter("date");
-			visiterManager.modifierVisiter(id ,codemed, codepat, date);
+			visiterManager.modifierVisiter(id ,codemed, codepat, Date.valueOf(date));
 			response.sendRedirect("visiter.do");
 		}
 		else if(path.equals("/supprimerVisiter.do")){

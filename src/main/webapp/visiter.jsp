@@ -32,7 +32,7 @@
 				<tr>	
 					<td>${v.codemed}</td>
 					<td>${v.codepat}</td>
-					<td>${v.date}</td>
+					<td>${sdf.format(v.date)}</td>
 					<td><a href="modifierVisiter.do?id=${v.id}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
 					<td><a onclick="return confirm('Etes-vous sûr de supprimer cette visite?')" href="supprimerVisiter.do?id=${v.id}">
 					<img src="images/delete.png" width="50" style="margin:-10px 0px"></a></td>

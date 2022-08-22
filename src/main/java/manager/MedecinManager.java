@@ -14,7 +14,6 @@ public class MedecinManager {
 	public List<Medecin> afficherTousLesMedecins() {
 		Session session = (Session) HibernateUtil.getSessionFactory().openSession();
 		Query q = session.createQuery("FROM Medecin m ORDER BY m.codemed ASC");
-//		List<Medecin> m = q.list();
 		List<Medecin> medecin = new ArrayList<Medecin>();
 		List l = q.list();
 		Iterator i = l.iterator();

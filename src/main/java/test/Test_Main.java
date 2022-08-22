@@ -1,30 +1,31 @@
 package test;
 
-import java.util.List;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import bean.Medecin;
 import bean.Visiter;
 import manager.MedecinManager;
+import manager.PatientManager;
 import manager.VisiterManager;
 import util.HibernateUtil;
 import web.VisiterModele;
 
 public class Test_Main {
 
-	public static void main(String[] args) {
-//		VisiterManager visiterManager = new VisiterManager();;
-//		VisiterModele model = new VisiterModele();
-//		List<Visiter> visiter = visiterManager.afficherTousLesVisiters(); 
-//		  model.setVisiters(visiter);
-		  
-//		  for(Visiter v : model.getVisiters()) {
-//			  System.out.println(v.getCodemed());
-//		  }
+	public static void main(String[] args){
+		
+		VisiterManager v = new VisiterManager();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		System.out.println(sdf.format(v.getVisiter(3).getDate()));
+//		v.ajouterVisiter("P502", "P502", Date.valueOf("2022-08-12"));
+//		v.ajouterVisiter("P502", "P502", Date.valueOf("2022-08-13"));
+//		v.ajouterVisiter("P012", "P601", Date.valueOf("2022-08-16"));
+//		v.ajouterVisiter("D117", "P970", Date.valueOf("2022-08-18"));
+		
 		  
 //		  MedecinManager m = new MedecinManager();
 //		  System.out.println(m.getMedecinCode("D315"));
-		  
-		 
 		
 //		VisiterManager v = new VisiterManager();
 		
@@ -35,7 +36,7 @@ public class Test_Main {
 //		v.ajouterVisiter("D117", "P970", "12/08/22");
 		
 //		PatientManager p = new PatientManager();
-		
+//		
 //		p.ajouterPatient("P401", "MARO", "Manana", "M", "Ampandrana");
 //		p.ajouterPatient("P502", "RAKOTO", "Manandray", "M", "Masoalahy");
 //		p.ajouterPatient("P351", "RASOA", "Marie", "F", "Mananara");
@@ -57,12 +58,12 @@ public class Test_Main {
 //		m.modifierMedecin(5, "D004", "ANDRY", "Nomenjanahary", "Docteur");
 //		m.modifierMedecin(6, "D315", "TANTELY", "Mirantsoa", "Docteur");
 		
-//		m.ajouterMedecin("P502", "MAHOLY", "Jeanne", "Pharmacienne");
-//		m.ajouterMedecin("M012", "TAHIRY", "Marie Claire", "Médecin");
-//		m.ajouterMedecin("M124", "MAHERY", "Sarobidy", "Médecin");
-//		m.ajouterMedecin("I117", "LALAINA", "Lovatiana", "Infirmier");
-//		m.ajouterMedecin("I004", "ANDRY", "Nomenjanahary", "Infirmier");
-//		m.ajouterMedecin("SG315", "TANTELY", "Mirantsoa", "Sage-femme");
+//		m.ajouterMedecin("P502", "MAHOLY", "Jeanne", "P");
+//		m.ajouterMedecin("M012", "TAHIRY", "Marie Claire", "P");
+//		m.ajouterMedecin("M124", "MAHERY", "Sarobidy", "D");
+//		m.ajouterMedecin("I117", "LALAINA", "Lovatiana", "D");
+//		m.ajouterMedecin("I004", "ANDRY", "Nomenjanahary", "MI");
+//		m.ajouterMedecin("SG315", "TANTELY", "Mirantsoa", "E");
 		
 //		System.out.println(m.afficherTousLesMedecins());
 		HibernateUtil.sessionFactory.close();
