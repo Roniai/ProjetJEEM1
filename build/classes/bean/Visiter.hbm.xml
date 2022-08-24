@@ -5,12 +5,11 @@
 
 <hibernate-mapping>
 <class name="bean.Visiter" table="visiter">
-	<id name="id" column="id">
-	<generator class="increment"></generator>
-	</id>
+	<composite-id name="id">
+		<key-property name="codemed" column="code_med" />
+		<key-property name="codepat" column="code_pat" />
+	</composite-id>
 	
-	<property name="codemed" column="code_med"></property>
-	<property name="codepat" column="code_pat"></property>
 	<property name="date" column="date"></property>
 	
 </class>

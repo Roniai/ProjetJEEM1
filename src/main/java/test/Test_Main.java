@@ -15,57 +15,74 @@ public class Test_Main {
 
 	public static void main(String[] args){
 		
-		VisiterManager v = new VisiterManager();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-		System.out.println(sdf.format(v.getVisiter(3).getDate()));
-//		v.ajouterVisiter("P502", "P502", Date.valueOf("2022-08-12"));
-//		v.ajouterVisiter("P502", "P502", Date.valueOf("2022-08-13"));
-//		v.ajouterVisiter("P012", "P601", Date.valueOf("2022-08-16"));
-//		v.ajouterVisiter("D117", "P970", Date.valueOf("2022-08-18"));
+		//MEDECIN - TEST
 		
-		  
-//		  MedecinManager m = new MedecinManager();
-//		  System.out.println(m.getMedecinCode("D315"));
+//		MedecinManager m = new MedecinManager();
+//		
+//		m.ajouterMedecin("A502", "MAHOLY", "Jeanne", "P");
+//		m.ajouterMedecin("A012", "TAHIRY", "Marie Claire", "P");
+//		m.ajouterMedecin("B124", "MAHERY", "Sarobidy", "D");
+//		m.ajouterMedecin("C117", "LALAINA", "Lovatiana", "D");
+//		m.ajouterMedecin("C004", "ANDRY", "Nomenjanahary", "MI");
+//		m.ajouterMedecin("D315", "TANTELY", "Mirantsoa", "E");
+		
+		
+//		m.modifierMedecin("A502", "A502", "MAHOLY", "Jeannes", "P");
+//		m.modifierMedecin("A012", "A012", "TAHIRY", "Marie Claire", "P");
+//		m.modifierMedecin("B124", "B124", "MAHERY", "Sarobidy", "D");
+//		m.modifierMedecin("C117", "C117", "LALAINA", "Lovatiana", "D");
+//		m.modifierMedecin("C004", "C004", "ANDRY", "Nomenjanahary", "MI");
+//		m.modifierMedecin("D315", "D315", "TANTELY", "Mirantsoa", "E");
+		
+//		m.supprimerMedecin("A502");
+		
+//		System.out.println(m.afficherTousLesMedecins());
+		
+//		System.out.println(m.getMedecin("A012"));
+		
+		
+		//PATIENT - TEST
+		
+//		PatientManager p = new PatientManager();
+//	
+//		p.ajouterPatient("PA401", "MARO", "Manana", "M", "Ampandrana");
+//		p.ajouterPatient("PB502", "RAKOTO", "Manandray", "M", "Masoalahy");
+//		p.ajouterPatient("PB351", "RASOA", "Marie", "F", "Mananara");
+//		p.ajouterPatient("PC601", "RABE", "Tolotra", "M", "Ampahibe");
+//		p.ajouterPatient("PC708", "BARY", "Mahefa", "M", "Itondra");
+//		p.ajouterPatient("PE970", "RINDRA", "Marinà", "F", "Mahalena");
+	
+//		p.modifierPatient("P401", "P401", "MARO", "Manana", "M", "Ampandrana");
+//		p.modifierPatient("P502", "P502", "RAKOTO", "Manandray", "M", "Masoalahy");
+//		p.modifierPatient("P351", "P351", "RASOA", "Marie", "F", "Mananara");
+//		p.modifierPatient("P601", "P601", "RABE", "Tolotra", "M", "Ampahibe");
+//		p.modifierPatient("P708", "P708", "BARY", "Mahefa", "M", "Itondra");
+//		p.modifierPatient("P970", "P970", "RINDRA", "Marinà", "F", "Mahalena");
+	
+//		p.supprimerPatient("P401");
+
+//		System.out.println(p.recherchePatient("P502"));
+		
+//		System.out.println(p.afficherTousLesPatients());
+		
+//		System.out.println(p.getPatient("P351"));
+		
+		
+		//VISITE - TEST
 		
 //		VisiterManager v = new VisiterManager();
 		
-//		v.modifierVisiter(1, "P315", "P401", "20/08/22");
+//		v.ajouterVisiter("P444", "P444", Date.valueOf("2022-08-12"));
+//		v.ajouterVisiter("P401", "P502", Date.valueOf("2022-08-13"));
+//		v.ajouterVisiter("P012", "P601", Date.valueOf("2022-08-16"));
+//		v.ajouterVisiter("D117", "P970", Date.valueOf("2022-08-18"));
 		
-//		v.ajouterVisiter("P502", "P502", "20/08/22");
-//		v.ajouterVisiter("P012", "P601", "12/08/22");
-//		v.ajouterVisiter("D117", "P970", "12/08/22");
+//		System.out.println(v.getVisiter("P012", "P601"));
 		
-//		PatientManager p = new PatientManager();
-//		
-//		p.ajouterPatient("P401", "MARO", "Manana", "M", "Ampandrana");
-//		p.ajouterPatient("P502", "RAKOTO", "Manandray", "M", "Masoalahy");
-//		p.ajouterPatient("P351", "RASOA", "Marie", "F", "Mananara");
-//		p.ajouterPatient("P601", "RABE", "Tolotra", "M", "Ampahibe");
-//		p.ajouterPatient("P708", "BARY", "Mahefa", "M", "Itondra");
-//		p.ajouterPatient("P970", "RINDRA", "Marinà", "F", "Mahalena");
+//		v.modifierVisiter("P444", "P444", "P401", "P401", Date.valueOf("2022-08-16"));
 		
-//		p.modifierPatient(1, "P402", "MARO", "Manana", "M", "Ampandrana");
-
-//		System.out.println(p.recherchePatient("1"));
+//		v.supprimerVisiter("P012", "P601");
 		
-//		MedecinManager m = new MedecinManager();
-//		m.supprimerMedecin(6);
-		
-//		m.modifierMedecin(1, "P502", "MAHOLY", "Jeanne", "Professeur");
-//		m.modifierMedecin(2, "P012", "MAHERY", "Sarobidy", "Professeur");
-//		m.modifierMedecin(3, "D124", "TAHIRY", "Marie Claire", "Docteur");
-//		m.modifierMedecin(4, "D117", "LALAINA", "Lovatiana", "Docteur");
-//		m.modifierMedecin(5, "D004", "ANDRY", "Nomenjanahary", "Docteur");
-//		m.modifierMedecin(6, "D315", "TANTELY", "Mirantsoa", "Docteur");
-		
-//		m.ajouterMedecin("P502", "MAHOLY", "Jeanne", "P");
-//		m.ajouterMedecin("M012", "TAHIRY", "Marie Claire", "P");
-//		m.ajouterMedecin("M124", "MAHERY", "Sarobidy", "D");
-//		m.ajouterMedecin("I117", "LALAINA", "Lovatiana", "D");
-//		m.ajouterMedecin("I004", "ANDRY", "Nomenjanahary", "MI");
-//		m.ajouterMedecin("SG315", "TANTELY", "Mirantsoa", "E");
-		
-//		System.out.println(m.afficherTousLesMedecins());
 		HibernateUtil.sessionFactory.close();
 	}
 }

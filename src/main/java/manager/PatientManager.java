@@ -41,10 +41,10 @@ public class PatientManager {
 		return patient;
 	}
 	
-	public Patient getPatient(int id) {
+	public Patient getPatient(String codepat) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Patient p = (Patient)session.load(Patient.class, id);
+		Patient p = (Patient)session.load(Patient.class, codepat);
 		return p;
 	}
 	
@@ -61,23 +61,38 @@ public class PatientManager {
 		session.getTransaction().commit();
 	}
 	
-	public void modifierPatient(int id, String codepat, String nom, String prenom, String sexe, String adresse) {
+	public void modifierPatient(String codepat_old, String codepat_new, String nom, String prenom, String sexe, String adresse) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Patient p = (Patient)session.load(Patient.class, id);
-		p.setCodepat(codepat);
-		p.setNom(nom);
-		p.setPrenom(prenom);
-		p.setSexe(sexe);
-		p.setAdresse(adresse);
-		session.update(p);
+		
+		//Codepat change
+		if(codepat_old!=codepat_new) {
+			Patient p_old = (Patient)session.load(Patient.class, codepat_old);
+			Patient p_new = new Patient();
+			p_new.setCodepat(codepat_new);
+			p_new.setNom(nom);
+			p_new.setPrenom(prenom);
+			p_new.setSexe(sexe);
+			p_new.setAdresse(adresse);
+			session.delete(p_old);
+			session.save(p_new);
+		}
+		//Codepat ne change pas
+		else {
+			Patient p = (Patient)session.load(Patient.class, codepat_old);
+			p.setNom(nom);
+			p.setPrenom(prenom);
+			p.setSexe(sexe);
+			p.setAdresse(adresse);
+			session.update(p);
+		}
 		session.getTransaction().commit();
 	}
 	
-	public void supprimerPatient(int id) {
+	public void supprimerPatient(String codepat) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Patient p = (Patient)session.load(Patient.class, id);
+		Patient p = (Patient)session.load(Patient.class, codepat);
 		session.delete(p);
 		session.getTransaction().commit();
 	}

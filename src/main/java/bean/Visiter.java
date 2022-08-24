@@ -3,43 +3,24 @@ package bean;
 //Indique la date au format SQL que le JDBC peut comprendre
 import java.sql.Date;
 
-public class Visiter {
-	private int id;
-	private String codemed;
-	private String codepat;
+public class Visiter{
+	private VisiterId id;
 	private Date date;
 	
 	public Visiter() {}
 
-	public Visiter(String codemed, String codepat, Date date) {
+	public Visiter(VisiterId id, Date date) {
 		super();
-		this.codemed = codemed;
-		this.codepat = codepat;
+		this.id = id;
 		this.date = date;
 	}
 
-	public int getId() {
+	public VisiterId getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(VisiterId id) {
 		this.id = id;
-	}
-
-	public String getCodemed() {
-		return codemed;
-	}
-
-	public void setCodemed(String codemed) {
-		this.codemed = codemed;
-	}
-
-	public String getCodepat() {
-		return codepat;
-	}
-
-	public void setCodepat(String codepat) {
-		this.codepat = codepat;
 	}
 
 	public Date getDate() {
@@ -52,7 +33,6 @@ public class Visiter {
 
 	@Override
 	public String toString() {
-		return "Visiter [id=" + id + ", codemed=" + codemed + ", codepat=" + codepat + ", date=" + date + "]";
+		return "Visiter [id=" + id + ", date=" + date + "]";
 	}
-	
 }

@@ -25,10 +25,10 @@ public class MedecinManager {
 		return medecin;
 	}
 	
-	public Medecin getMedecin(int id) {
+	public Medecin getMedecin(String codemed) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Medecin m = (Medecin)session.load(Medecin.class, id);
+		Medecin m = (Medecin)session.load(Medecin.class, codemed);
 		return m;
 	}
 	
@@ -44,22 +44,36 @@ public class MedecinManager {
 		session.getTransaction().commit();
 	}
 	
-	public void modifierMedecin(int id, String codemed, String nom, String prenom, String grade) {
+	public void modifierMedecin(String codemed_old, String codemed_new, String nom, String prenom, String grade) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Medecin m = (Medecin)session.load(Medecin.class, id);
-		m.setCodemed(codemed);
-		m.setNom(nom);
-		m.setPrenom(prenom);
-		m.setGrade(grade);
-		session.update(m);
+		
+		//Codemed change
+		if(codemed_old!=codemed_new) {
+			Medecin m_old = (Medecin)session.load(Medecin.class, codemed_old);
+			Medecin m_new = new Medecin();
+			m_new.setCodemed(codemed_new);
+			m_new.setNom(nom);
+			m_new.setPrenom(prenom);
+			m_new.setGrade(grade);
+			session.delete(m_old);
+			session.save(m_new);
+		}
+		//Codemed ne change pas
+		else {
+			Medecin m = (Medecin)session.load(Medecin.class, codemed_old);
+			m.setNom(nom);
+			m.setPrenom(prenom);
+			m.setGrade(grade);
+			session.update(m);
+		}
 		session.getTransaction().commit();
 	}
 	
-	public void supprimerMedecin(int id) {
+	public void supprimerMedecin(String codemed) {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
-		Medecin m = (Medecin)session.load(Medecin.class, id);
+		Medecin m = (Medecin)session.load(Medecin.class, codemed);
 		session.delete(m);
 		session.getTransaction().commit();
 	}

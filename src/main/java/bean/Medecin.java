@@ -1,7 +1,6 @@
 package bean;
 
 public class Medecin {
-	private int id;
 	private String codemed;
 	private String nom;
 	private String prenom;
@@ -17,14 +16,6 @@ public class Medecin {
 		this.grade = grade;
 	}
 
-	
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getCodemed() {
 		return codemed;
@@ -62,6 +53,5 @@ public class Medecin {
 	public String toString() {
 		return "Medecin [codemed=" + codemed + ", nom=" + nom + ", prenom=" + prenom + ", grade=" + grade + "]";
 	}
-	
 	
 }

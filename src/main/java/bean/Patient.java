@@ -1,7 +1,6 @@
 package bean;
 
 public class Patient {
-	private int id;
 	private String codepat;
 	private String nom;
 	private String prenom;
@@ -17,14 +16,6 @@ public class Patient {
 		this.prenom = prenom;
 		this.sexe = sexe;
 		this.adresse = adresse;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getCodepat() {
@@ -69,8 +60,8 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [id=" + id + ", codepat=" + codepat + ", nom=" + nom + ", prenom=" + prenom + ", sexe=" + sexe
-				+ ", adresse=" + adresse + "]";
+		return "Patient [codepat=" + codepat + ", nom=" + nom + ", prenom=" + prenom + ", sexe=" + sexe + ", adresse="
+				+ adresse + "]";
 	}
 	
 }

@@ -72,28 +72,28 @@ public class ControleurServlet extends HttpServlet{
 			medecinManager.ajouterMedecin(codemed, nom, prenom, grade);
 			response.sendRedirect("medecin.do");
 		}
-		else if(path.equals("/modifierMedecin.do"))
-		{
-			int id = Integer.parseInt(request.getParameter("id"));
-			Medecin m = medecinManager.getMedecin(id);
-			request.setAttribute("medecin", m);
-			request.getRequestDispatcher("modifierMedecin.jsp").forward(request, response); 
-		}
-		else if(path.equals("/updateMedecin.do"))
-		{
-			int id = Integer.parseInt(request.getParameter("id"));
-			String codemed = request.getParameter("codemed");
-			String nom = request.getParameter("nom");
-			String prenom = request.getParameter("prenom");
-			String grade = request.getParameter("grade");
-			medecinManager.modifierMedecin(id ,codemed, nom, prenom, grade);
-			response.sendRedirect("medecin.do");
-		}
-		else if(path.equals("/supprimerMedecin.do")){
-			int id = Integer.parseInt(request.getParameter("id"));
-			medecinManager.supprimerMedecin(id);
-			response.sendRedirect("medecin.do");
-		}
+//		else if(path.equals("/modifierMedecin.do"))
+//		{
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			Medecin m = medecinManager.getMedecin(id);
+//			request.setAttribute("medecin", m);
+//			request.getRequestDispatcher("modifierMedecin.jsp").forward(request, response); 
+//		}
+//		else if(path.equals("/updateMedecin.do"))
+//		{
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			String codemed = request.getParameter("codemed");
+//			String nom = request.getParameter("nom");
+//			String prenom = request.getParameter("prenom");
+//			String grade = request.getParameter("grade");
+//			medecinManager.modifierMedecin(id ,codemed, nom, prenom, grade);
+//			response.sendRedirect("medecin.do");
+//		}
+//		else if(path.equals("/supprimerMedecin.do")){
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			medecinManager.supprimerMedecin(id);
+//			response.sendRedirect("medecin.do");
+//		}
 		
 		//###########################  PATIENT  ###########################
 		
@@ -118,29 +118,29 @@ public class ControleurServlet extends HttpServlet{
 			patientManager.ajouterPatient(codepat, nom, prenom, sexe, adresse);
 			response.sendRedirect("patient.do?motCle=");
 		}
-		else if(path.equals("/modifierPatient.do"))
-		{
-			int id = Integer.parseInt(request.getParameter("id"));
-			Patient p = patientManager.getPatient(id);
-			request.setAttribute("patient", p);
-			request.getRequestDispatcher("modifierPatient.jsp").forward(request, response); 
-		}
-		else if(path.equals("/updatePatient.do"))
-		{
-			int id = Integer.parseInt(request.getParameter("id"));
-			String codepat = request.getParameter("codepat");
-			String nom = request.getParameter("nom");
-			String prenom = request.getParameter("prenom");
-			String sexe = request.getParameter("sexe");
-			String adresse = request.getParameter("adresse");
-			patientManager.modifierPatient(id ,codepat, nom, prenom, sexe, adresse);
-			response.sendRedirect("patient.do?motCle=");
-		}
-		else if(path.equals("/supprimerPatient.do")){
-			int id = Integer.parseInt(request.getParameter("id"));
-			patientManager.supprimerPatient(id);
-			response.sendRedirect("patient.do?motCle=");
-		}
+//		else if(path.equals("/modifierPatient.do"))
+//		{
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			Patient p = patientManager.getPatient(id);
+//			request.setAttribute("patient", p);
+//			request.getRequestDispatcher("modifierPatient.jsp").forward(request, response); 
+//		}
+//		else if(path.equals("/updatePatient.do"))
+//		{
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			String codepat = request.getParameter("codepat");
+//			String nom = request.getParameter("nom");
+//			String prenom = request.getParameter("prenom");
+//			String sexe = request.getParameter("sexe");
+//			String adresse = request.getParameter("adresse");
+//			patientManager.modifierPatient(id ,codepat, nom, prenom, sexe, adresse);
+//			response.sendRedirect("patient.do?motCle=");
+//		}
+//		else if(path.equals("/supprimerPatient.do")){
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			patientManager.supprimerPatient(id);
+//			response.sendRedirect("patient.do?motCle=");
+//		}
 		
 		//###########################  VISITER  ###########################
 
@@ -165,27 +165,27 @@ public class ControleurServlet extends HttpServlet{
 			visiterManager.ajouterVisiter(codemed, codepat, Date.valueOf(date));
 			response.sendRedirect("visiter.do");
 		}
-		else if(path.equals("/modifierVisiter.do"))
-		{
-			int id = Integer.parseInt(request.getParameter("id"));
-			Visiter v = visiterManager.getVisiter(id);
-			request.setAttribute("visiter", v);
-			request.getRequestDispatcher("modifierVisiter.jsp").forward(request, response); 
-		}
-		else if(path.equals("/updateVisiter.do"))
-		{
-			int id = Integer.parseInt(request.getParameter("id"));
-			String codemed = request.getParameter("codemed");
-			String codepat = request.getParameter("codepat");
-			String date = request.getParameter("date");
-			visiterManager.modifierVisiter(id ,codemed, codepat, Date.valueOf(date));
-			response.sendRedirect("visiter.do");
-		}
-		else if(path.equals("/supprimerVisiter.do")){
-			int id = Integer.parseInt(request.getParameter("id"));
-			visiterManager.supprimerVisiter(id);
-			response.sendRedirect("visiter.do");
-		}
+//		else if(path.equals("/modifierVisiter.do"))
+//		{
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			Visiter v = visiterManager.getVisiter(id);
+//			request.setAttribute("visiter", v);
+//			request.getRequestDispatcher("modifierVisiter.jsp").forward(request, response); 
+//		}
+//		else if(path.equals("/updateVisiter.do"))
+//		{
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			String codemed = request.getParameter("codemed");
+//			String codepat = request.getParameter("codepat");
+//			String date = request.getParameter("date");
+//			visiterManager.modifierVisiter(id ,codemed, codepat, Date.valueOf(date));
+//			response.sendRedirect("visiter.do");
+//		}
+//		else if(path.equals("/supprimerVisiter.do")){
+//			int id = Integer.parseInt(request.getParameter("id"));
+//			visiterManager.supprimerVisiter(id);
+//			response.sendRedirect("visiter.do");
+//		}
 		
 		else 
 		{
