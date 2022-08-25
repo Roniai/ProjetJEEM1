@@ -1,0 +1,120 @@
+@charset "ISO-8859-1";
+
+  body{
+	background: #e7e7e7;
+	overflow: hidden;
+  }
+  
+  div#arriere-plan{
+   position:absolute;
+   width:100%;
+   height:100%;
+   top: 56px; left:0px;
+ }
+ 
+ div#arriere-plan h2{
+   font-weight: bolder;
+   font-size: 30px;
+   font-family: dayrom;
+   color: rgb(0,139,139); 
+   line-height: 0px;
+   -webkit-transition: font-size 1s; 
+   transition: font-size 1s;
+ }
+
+   div#arriere-plan h3{
+   font-weight: bolder;
+   font-size: 25px;
+   font-family: segxsym;
+   color: #e7e7e7; 
+   margin-top: 10px;
+   -webkit-transition: font-size 1s; 
+   transition: font-size 1s;
+   width : 100%;
+ }
+
+ div#arriere-plan h2:hover{
+   font-size: 40px;
+ }
+ 
+ div#arriere-plan h3:hover{
+ 	font-size: 30px;
+ }
+ 
+ div#fond-noir{
+      height : 100%;
+      width:100%;
+      float:right;
+      background-color: rgba(0,0,0, 0.7);
+  }
+ 
+ div#gestion-visite{
+     height : 50%;
+     width: 20%;
+     float: right;
+     margin-right: 15%;
+     margin-top: 3%;
+ }
+ 
+ div#presentation{
+     float: left;
+     margin-left:12%;
+     margin-top:36%;
+ }
+
+div#presentation h4{
+   font-weight: bolder;
+   font-size: 20px;
+   font-family: dayrom;
+   color: rgb(0,139,139);
+   opacity: 0.1; 
+   -webkit-animation-name: example; /* Chrome, Safari, Opera */
+   -webkit-animation-duration: 5s; /* Chrome, Safari, Opera */
+   -webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+   animation-name: example;
+   animation-duration: 5s;
+   animation-iteration-count: infinite;
+}
+
+  /* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   {opacity: 0.1}
+    50%  {opacity: 1}
+    100% {opacity: 0.1}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {opacity: 0.1}
+    50%  {opacity: 1}
+    100% {opacity: 0.1}
+}
+
+div#presentation p{
+    font-size: 14px;
+    font-family: titilum;
+    color: white;
+    opacity: 0.1; 
+    line-height: 3px;
+    -webkit-animation-name: exampleh; /* Chrome, Safari, Opera */
+	-webkit-animation-duration: 5s; /* Chrome, Safari, Opera */
+	-webkit-animation-iteration-count: infinite; /* Chrome, Safari, Opera */
+	animation-name: example;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes exampleh {
+    0%   {opacity: 0.1}
+    50%  {opacity: 1}
+    100% {opacity: 0.1}
+}
+
+/* Standard syntax */
+@keyframes exampleh {
+    0%   {opacity: 0.1}
+    50%  {opacity: 1}
+    100% {opacity: 0.1}
+}
+  
