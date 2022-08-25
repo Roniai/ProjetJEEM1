@@ -70,7 +70,7 @@ public class Test_Main {
 		
 		//VISITE - TEST
 		
-//		VisiterManager v = new VisiterManager();
+		VisiterManager v = new VisiterManager();
 		
 //		v.ajouterVisiter("P444", "P444", Date.valueOf("2022-08-12"));
 //		v.ajouterVisiter("P401", "P502", Date.valueOf("2022-08-13"));
@@ -82,6 +82,8 @@ public class Test_Main {
 //		v.modifierVisiter("P444", "P444", "P401", "P401", Date.valueOf("2022-08-16"));
 		
 //		v.supprimerVisiter("P012", "P601");
+		
+		System.out.println(v.afficherTousLesVisiters());
 		
 		HibernateUtil.sessionFactory.close();
 	}

@@ -40,8 +40,8 @@
 						<c:if test="${m.grade=='MI'}"><c:out value="Médecin Interne"></c:out></c:if>
 						<c:if test="${m.grade=='E'}"><c:out value="Etudiant"></c:out></c:if>
 					</td>
-					<td><a href="modifierMedecin.do?id=${m.id}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
-					<td><a onclick="return confirm('Etes-vous sûr de supprimer ce medecin?')" href="supprimerMedecin.do?id=${m.id}">
+					<td><a href="modifierMedecin.do?codemed=${m.codemed}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
+					<td><a onclick="return confirm('Etes-vous sûr de supprimer ce medecin?')" href="supprimerMedecin.do?codemed=${m.codemed}">
 					<img src="images/delete.png" width="50" style="margin:-10px 0px"></a></td>
 				</tr>
 				</c:forEach>

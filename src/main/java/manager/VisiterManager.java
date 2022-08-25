@@ -15,7 +15,7 @@ import util.HibernateUtil;
 public class VisiterManager {
 	public List<Visiter> afficherTousLesVisiters() {
 		Session session = (Session) HibernateUtil.getSessionFactory().openSession();
-		Query q = session.createQuery("FROM Visiter v ORDER BY v.codemed ASC");
+		Query q = session.createQuery("FROM Visiter v ORDER BY v.id.codemed ASC");
 		List<Visiter> visiter = new ArrayList<Visiter>();
 		List l = q.list();
 		Iterator i = l.iterator();

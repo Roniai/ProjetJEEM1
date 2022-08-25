@@ -42,8 +42,8 @@
 						<c:if test="${p.sexe=='F'}"><c:out value="Féminin"></c:out></c:if>
 					</td>
 					<td>${p.adresse}</td>
-					<td><a href="modifierPatient.do?id=${p.id}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
-					<td><a onclick="return confirm('Etes-vous sûr de supprimer ce patient?')" href="supprimerPatient.do?id=${p.id}">
+					<td><a href="modifierPatient.do?codepat=${p.codepat}"><img src="images/edit.png" width="40" style="margin-bottom:-10px;"></a></td>
+					<td><a onclick="return confirm('Etes-vous sûr de supprimer ce patient?')" href="supprimerPatient.do?codepat=${p.codepat}">
 					<img src="images/delete.png" width="50" style="margin:-10px 0px"></a></td>
 				</tr>
 				</c:forEach>

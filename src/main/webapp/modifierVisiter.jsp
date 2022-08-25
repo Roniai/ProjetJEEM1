@@ -17,14 +17,15 @@
 		</div>
 		<div class="card-body">
 			<form action="updateVisiter.do" method="post">
-			<input type="hidden" name="id" value="${visiter.id}"/>
+			<input type="hidden" name="codemed_old" value="${visiter.id.codemed}"/>
+			<input type="hidden" name="codepat_old" value="${visiter.id.codepat}"/>
 			<div class="form-group">
 				<label class="control-label">Code du Médecin : </label>
-				<input type="text" name="codemed" class="form-control" value="${visiter.codemed}" autocomplete="off"/>
+				<input type="text" name="codemed_new" class="form-control" value="${visiter.id.codemed}" autocomplete="off"/>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Code du Patient : </label>
-				<input type="text" name="codepat" class="form-control" value="${visiter.codepat}" autocomplete="off"/>
+				<input type="text" name="codepat_new" class="form-control" value="${visiter.id.codepat}" autocomplete="off"/>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Date : </label>
