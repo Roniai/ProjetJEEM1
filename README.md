@@ -16,7 +16,7 @@
 - Télécharger hibernate annotation
 - Télécharger slf4j-api et slf4j-simple
 - Télécharger mysql-connector JAVA
-- 
+
 ## Regrouper les Jar pour en créer des librairies :
 Les Jars tirés de hibernate-distribution :
 - hibernate*.jar (/ hibernate-distribution)
