@@ -7,9 +7,9 @@
 ## Télécharger et configurer le serveur Tomcat :
 - Extraire le dossier compressé
 - Ouvrir eclipse :
---> Aller dans : **Windows/Preferences/Serveur Runtime Environments**
---> Add + Apache + VERSION_DE_VOTRE_TOMCAT
---> Chemin de dossier <apache tomcat ...> extrait + Finish
+- --> Aller dans : **Windows/Preferences/Serveur Runtime Environments**
+- --> Add + Apache + VERSION_DE_VOTRE_TOMCAT
+- --> Chemin de dossier <apache tomcat ...> extrait + Finish
 
 ## Télécharger et configurer Hibernate :
 - Télécharger **hibernate**
