@@ -1,4 +1,4 @@
-# ProjetJEEM1
+# Gestion des visites médicales
 
 ## Télécharger et Installer "Eclipse IDE for Enterprise Java and Web Developers" :
 - Extraire le dossier compressé
@@ -7,15 +7,15 @@
 ## Télécharger et configurer le serveur Tomcat :
 - Extraire le dossier compressé
 - Ouvrir eclipse :
---> Aller dans : Windows/Preferences/Serveur Runtime Environments
---> Add + Apache + <version de votre Tomcat>
+--> Aller dans : **Windows/Preferences/Serveur Runtime Environments**
+--> Add + Apache + VERSION_DE_VOTRE_TOMCAT
 --> Chemin de dossier <apache tomcat ...> extrait + Finish
 
 ## Télécharger et configurer Hibernate :
-- Télécharger hibernate
-- Télécharger hibernate annotation
-- Télécharger slf4j-api et slf4j-simple
-- Télécharger mysql-connector JAVA
+- Télécharger **hibernate**
+- Télécharger **hibernate annotation**
+- Télécharger **slf4j-api** et **slf4j-simple**
+- Télécharger **mysql-connector** JAVA
 
 ## Regrouper les Jar pour en créer des librairies :
 Les Jars tirés de hibernate-distribution :
@@ -48,7 +48,7 @@ Créer un nouveau dossier (nommé Hibernate)
 - Créer une nouvelle livrairie comme nom "mysql-connector" et ajouter le JAR mysql-connector
 - Apply and close
 
-## Créer une base de données vide comme nom "m1visitmed_db"
+## Créer une base de données vide comme nom : "m1visitmed_db"
 
 ## Lancer le projet :
 - Aller sur l'onglet "Servers" en bas
